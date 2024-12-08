@@ -1,10 +1,37 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Alert, Button, StyleSheet, Text, View} from 'react-native';
+
+import MoodSlider from '../components/MoodSlider';
+
+const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    paddingHorizontal: 16,
+  },
+  title: {
+    fontSize: 24,
+    marginVertical: 20,
+    textAlign: 'center',
+  },
+  contentWrapper: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  buttonWrapper: {
+    marginTop: 20,
+  },
+});
 
 const LogMoodScreen = () => {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Log Mood Screen</Text>
+    <View style={styles.wrapper}>
+      <Text style={styles.title}>How's your mood today?</Text>
+      <View style={styles.contentWrapper}>
+        <MoodSlider />
+        <View style={styles.buttonWrapper}>
+          <Button title="Submit" onPress={() => Alert.alert('TODO')} />
+        </View>
+      </View>
     </View>
   );
 };
