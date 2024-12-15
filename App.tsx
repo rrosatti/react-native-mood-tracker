@@ -10,6 +10,7 @@ import {Navigation} from './src/navigation';
 
 import {StyleSheet} from 'react-native-unistyles';
 import theme from './src/styles/theme';
+import {SafeAreaView} from 'react-native';
 
 StyleSheet.configure({
   themes: {
@@ -20,8 +21,19 @@ StyleSheet.configure({
   },
 });
 
+const styles = StyleSheet.create(theme => ({
+  safeArea: {
+    flex: 1,
+    backgroundColor: theme.colors.common.primary,
+  },
+}));
+
 const App = () => {
-  return <Navigation />;
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      <Navigation />
+    </SafeAreaView>
+  );
 };
 
 export default App;
