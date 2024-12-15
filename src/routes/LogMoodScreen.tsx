@@ -1,15 +1,19 @@
 import React, {useCallback, useState} from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Button, Text, View} from 'react-native';
+
+import {StyleSheet} from 'react-native-unistyles';
 
 import MoodSlider from '../components/MoodSlider';
 import {MoodConfig} from '../state/local/types';
 import useMoods from '../state/local/hooks/useMoods';
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create((theme, miniRuntime) => ({
   wrapper: {
     flex: 1,
     paddingHorizontal: 16,
-    paddingVertical: 20,
+    paddingTop: miniRuntime.insets.top + 20,
+    paddingBottom: miniRuntime.insets.bottom + 20,
+    backgroundColor: theme.colors.common.background,
   },
   title: {
     fontSize: 24,
@@ -23,7 +27,7 @@ const styles = StyleSheet.create({
   buttonWrapper: {
     marginTop: 20,
   },
-});
+}));
 
 const LogMoodScreen = () => {
   const [selectedMood, setSelectedMood] = useState<MoodConfig | null>();
