@@ -21,7 +21,8 @@ export default [
       globals: {
         module: 'readonly', // Define 'module' as a global variable
         require: 'readonly', // Define 'require' as a global variable
-        __dirname: 'readonly', // Define '__dirname' as a global variable
+        __dirname: 'readonly', // Define '__dirname' as a global variable,
+        console: 'readonly', // Define 'console' as a global variable
       },
     },
     rules: {
@@ -29,7 +30,13 @@ export default [
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
       'no-unused-vars': 'warn',
-      '@typescript-eslint/no-unused-vars': ['warn', {argsIgnorePattern: '^_'}],
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_', // Ignore arguments prefixed with _
+          varsIgnorePattern: '^_', // Ignore variables prefixed with _
+        },
+      ],
     },
   },
 ];
