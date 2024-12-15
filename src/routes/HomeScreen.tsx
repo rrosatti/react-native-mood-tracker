@@ -1,20 +1,25 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
+
+import {StyleSheet} from 'react-native-unistyles';
+
 import useStorage from '../state/local/hooks/useStorage';
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create((theme, miniRuntime) => ({
   wrapper: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 16,
-    paddingVertical: 20,
+    paddingTop: miniRuntime.insets.top + 20,
+    paddingBottom: miniRuntime.insets.bottom + 20,
+    backgroundColor: theme.colors.common.background,
   },
   moodText: {
     fontSize: 24,
     textAlign: 'center',
   },
-});
+}));
 
 const HomeScreen = () => {
   const {storage} = useStorage();

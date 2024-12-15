@@ -1,6 +1,7 @@
 import React, {useEffect, useMemo} from 'react';
 import Slider from '@react-native-community/slider';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
 
 import Expressionless from '../../../assets/Expressionless.svg';
 import Sad from '../../../assets/Sad.svg';
@@ -10,7 +11,7 @@ import {SvgProps} from 'react-native-svg';
 import {MoodConfig} from '../../state/local/types';
 import {isHappy, isNeutral, isSad} from './utils';
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create(theme => ({
   wrapper: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -27,12 +28,16 @@ const styles = StyleSheet.create({
   slider: {
     width: '100%',
   },
-});
+  minTrackColor: {
+    color: theme.colors.progressBar.minTrack,
+  },
+  maxTrackColor: {
+    color: theme.colors.progressBar.maxTrack,
+  },
+}));
 
 const SLIDER_MIN_VALUE = 0;
 const SLIDER_MAX_VALUE = 100;
-const SLIDER_MIN_TRACK_COLOR = '#294c60';
-const SLIDER_MAX_TRACK_COLOR = '#adb6c4';
 
 type EmojiInfoProps = {
   active: boolean;
@@ -102,8 +107,8 @@ const MoodSlider = ({onSelectedMood}: Props) => {
         value={sliderValue}
         minimumValue={SLIDER_MIN_VALUE}
         maximumValue={SLIDER_MAX_VALUE}
-        maximumTrackTintColor={SLIDER_MAX_TRACK_COLOR}
-        minimumTrackTintColor={SLIDER_MIN_TRACK_COLOR}
+        maximumTrackTintColor={styles.maxTrackColor.color}
+        minimumTrackTintColor={styles.minTrackColor.color}
         onValueChange={setSliderValue}
       />
     </>
