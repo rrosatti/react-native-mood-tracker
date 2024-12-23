@@ -10,6 +10,7 @@ import {useState} from 'react';
 import {SvgProps} from 'react-native-svg';
 import {MoodConfig} from '../../state/local/types';
 import {isHappy, isNeutral, isSad} from './utils';
+import {useGetMoodLocale} from '../../utils/mood';
 
 const styles = StyleSheet.create(theme => ({
   wrapper: {
@@ -62,6 +63,8 @@ type Props = {
 const MoodSlider = ({onSelectedMood}: Props) => {
   const [sliderValue, setSliderValue] = useState(0);
 
+  const getMoodLocale = useGetMoodLocale();
+
   const selectedMood = useMemo(() => {
     if (isSad(sliderValue)) return 'sad';
     if (isNeutral(sliderValue)) return 'neutral';
@@ -85,19 +88,19 @@ const MoodSlider = ({onSelectedMood}: Props) => {
       <View style={styles.wrapper}>
         <EmojiInfo
           SvgImage={Sad}
-          text="Sad"
+          text={getMoodLocale('sad')}
           active={selectedMood === 'sad'}
           onPress={() => setSliderValue(0)}
         />
         <EmojiInfo
           SvgImage={Expressionless}
-          text="Neutral"
+          text={getMoodLocale('neutral')}
           active={selectedMood === 'neutral'}
           onPress={() => setSliderValue(50)}
         />
         <EmojiInfo
           SvgImage={Smile}
-          text="Happy"
+          text={getMoodLocale('happy')}
           active={selectedMood === 'happy'}
           onPress={() => setSliderValue(100)}
         />
