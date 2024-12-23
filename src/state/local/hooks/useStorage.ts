@@ -19,12 +19,9 @@ const getTargetStorage = (key: StorageKey) =>
 
 type StorageState = {
   storage: StorageConfig;
-  setItem: <K extends StorageKey>(
-    key: K,
-    value: StorageConfig[K],
-  ) => Promise<void>;
-  getItem: <K extends StorageKey>(key: K) => Promise<StorageConfig[K]>;
-  removeItem: <K extends StorageKey>(key: K) => Promise<void>;
+  setItem: <K extends StorageKey>(key: K, value: StorageConfig[K]) => void;
+  getItem: <K extends StorageKey>(key: K) => StorageConfig[K];
+  removeItem: <K extends StorageKey>(key: K) => void;
   clear: () => void;
 };
 
@@ -55,7 +52,7 @@ const useStorage = create<StorageState>()(set => ({
       console.warn(`Failed to set item with key "${key}":`, JSON.stringify(e));
     }
   },
-  getItem: async <K extends StorageKey>(key: K) => {
+  getItem: <K extends StorageKey>(key: K) => {
     try {
       const targetStorage = getTargetStorage(key);
       const value = targetStorage.getString(key);

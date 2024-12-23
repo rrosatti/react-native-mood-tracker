@@ -6,8 +6,13 @@ export type MoodConfig = {
   updatedOn: Date;
 };
 
+// language
+
+export type Language = 'pt' | 'en';
+
 // storage
 export interface StorageConfig {
+  language: Language;
   moods: MoodConfig[];
 }
 export type StorageKey = keyof StorageConfig;
