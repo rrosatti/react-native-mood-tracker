@@ -1,0 +1,22 @@
+{
+  "testing": "Testando",
+  "home": {
+    "latestMood": "Último humor: {{mood}}"
+  },
+  "logMood": {
+    "title": "Como está o seu humor hoje?",
+    "submitButton": "Enviar"
+  },
+  "profile": {
+    "languageSelectorTitle": "Idioma"
+  },
+  "moodSlider": {
+    "sad": "Triste",
+    "neutral": "Neutro",
+    "happy": "Feliz"
+  },
+  "languageSelector": {
+    "en": "Inglês",
+    "pt": "Português"
+  }
+}
