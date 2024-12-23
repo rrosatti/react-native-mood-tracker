@@ -6,6 +6,7 @@ import {StyleSheet} from 'react-native-unistyles';
 import MoodSlider from '../components/MoodSlider';
 import {MoodConfig} from '../state/local/types';
 import useMoods from '../state/local/hooks/useMoods';
+import {useTranslation} from 'react-i18next';
 
 const styles = StyleSheet.create((theme, miniRuntime) => ({
   wrapper: {
@@ -32,16 +33,18 @@ const styles = StyleSheet.create((theme, miniRuntime) => ({
 const LogMoodScreen = () => {
   const [selectedMood, setSelectedMood] = useState<MoodConfig | null>();
 
+  const {t} = useTranslation('common');
+
   const {addMood} = useMoods();
 
   return (
     <View style={styles.wrapper}>
-      <Text style={styles.title}>How's your mood today?</Text>
+      <Text style={styles.title}>{t('logMood.title')}</Text>
       <View style={styles.contentWrapper}>
         <MoodSlider onSelectedMood={setSelectedMood} />
         <View style={styles.buttonWrapper}>
           <Button
-            title="Submit"
+            title={t('logMood.submitButton')}
             onPress={useCallback(() => addMood(selectedMood), [selectedMood])}
           />
         </View>
