@@ -1,0 +1,22 @@
+{
+  "testing": "Testing",
+  "home": {
+    "latestMood": "Latest mood: {{mood}}"
+  },
+  "logMood": {
+    "title": "How's your mood today?",
+    "submitButton": "submit"
+  },
+  "profile": {
+    "languageSelectorTitle": "Language"
+  },
+  "moodSlider": {
+    "sad": "Sad",
+    "neutral": "Neutral",
+    "happy": "Happy"
+  },
+  "languageSelector": {
+    "en": "English",
+    "pt": "Portuguese"
+  }
+}
