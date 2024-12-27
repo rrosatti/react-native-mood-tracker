@@ -11,6 +11,7 @@ import {Navigation} from './src/navigation';
 import {StyleSheet} from 'react-native-unistyles';
 import theme from './src/styles/theme';
 import {SafeAreaView} from 'react-native';
+import './src/remoteConfig';
 
 StyleSheet.configure({
   themes: {
