@@ -19,6 +19,11 @@ target 'RNMoodTracker' do
 
   pod 'react-native-config', :path => '../node_modules/react-native-config'
 
+  # pod 'FirebaseCore', :modular_headers => true
+  # pod 'FirebaseCoreInternal', :modular_headers => true
+  # pod 'FirebaseCoreExtension', :modular_headers => true
+  pod 'GoogleUtilities', :modular_headers => true
+
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.
