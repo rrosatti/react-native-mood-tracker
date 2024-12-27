@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@react-native-community/slider": "^4.5.5",
+    "@react-native-firebase/analytics": "^21.6.1",
     "@react-native-firebase/app": "^21.6.1",
     "@react-native-picker/picker": "^2.10.2",
     "@react-navigation/bottom-tabs": "^7.1.3",
