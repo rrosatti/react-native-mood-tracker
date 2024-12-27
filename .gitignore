@@ -72,3 +72,12 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# .env
+
+.env.local
+
+# firebase files
+
+*GoogleService-Info.plist
+*google-services.json
