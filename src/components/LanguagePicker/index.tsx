@@ -63,6 +63,7 @@ const LanguagePicker = () => {
       itemStyle={styles.item}>
       {items.map(item => (
         <PickerItem
+          key={item.value}
           value={item.value}
           label={item.label}
           isSelected={item.value === language}
