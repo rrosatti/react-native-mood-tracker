@@ -41,7 +41,6 @@ i18n
     ns: [defaultNS],
     defaultNS,
     fallbackNS: defaultNS,
-    // lng: 'en',
     fallbackLng: 'en',
   });
 
