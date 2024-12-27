@@ -2154,6 +2154,11 @@
   dependencies:
     firebase "10.13.2"
 
+"@react-native-firebase/remote-config@^21.6.1":
+  version "21.6.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-21.6.1.tgz#1a5c9e002bf896c74f48b592735a6c4f1a500d3f"
+  integrity sha512-0SfB+8qXAwSH3Eg5G3rCINmqsmRSDlKKxb182jxHgcml4EiYxbak9F0LDB81mAT9t1xpUhn4gBz42KL32YmZDA==
+
 "@react-native-picker/picker@^2.10.2":
   version "2.10.2"
   resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-2.10.2.tgz#92870eaefdde5cf06a0bb18dde593b9675c0bcab"
